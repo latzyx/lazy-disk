@@ -2,16 +2,13 @@ package main
 
 import (
 	"fmt"
-	"lazy/server"
+	"lazy/config"
 )
 
 func main() {
-	client := server.Client{
+	a := config.Client{
 		Corpid:     "",
 		CorPsecret: "",
 	}
-	gettoken := client.Gettoken()
-
-	fmt.Printf("%v", gettoken)
-
+	fmt.Println(a)
 }

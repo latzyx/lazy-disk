@@ -6,15 +6,11 @@ import (
 	"io"
 	"io/ioutil"
 	"lazy/ReturnMessage"
+	"lazy/config"
 	"net/http"
 )
 
-type Client struct {
-	Corpid     string `json:"corpid"`     // 企业ID
-	CorPsecret string `json:"corpsecret"` // 应用ID
-}
-
-func (c *Client) Gettoken() *ReturnMessage.ApifoxModal {
+func Gettoken(c *config.Client) *ReturnMessage.ApifoxModal {
 	r := new(ReturnMessage.ApifoxModal)
 	url := "https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=" + c.Corpid + "&corpsecret=" + c.CorPsecret
 	method := "GET"
