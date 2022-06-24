@@ -5,9 +5,10 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"net/http"
+
 	"lazy/ReturnMessage"
 	"lazy/config"
-	"net/http"
 )
 
 func Gettoken(c *config.Client) *ReturnMessage.ApifoxModal {
